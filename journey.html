@@ -1,0 +1,16 @@
+---
+layout: default
+title: My journey
+permalink: /journey/
+---
+<h1>My journey</h1>
+<ol>
+{% for step in site.data.journey %}
+  <li>
+    <p>{{ step.when }}</p>
+    <h2>{{ step.title }}</h2>
+    <p>{{ step.text }}</p>
+    {% if step.story %}<a href="{{ step.story | relative_url }}">Read the story →</a>{% endif %}
+  </li>
+{% endfor %}
+</ol>

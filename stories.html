@@ -1,0 +1,9 @@
+---
+layout: default
+title: Stories
+permalink: /stories/
+---
+<h1>Stories</h1>
+{% for post in site.posts %}
+  {% include story-card.html post=post %}
+{% endfor %}

@@ -1,0 +1,7 @@
+{% assign post = include.post %}
+<article class="story-card" data-tag="{{ post.tag | slugify }}">
+  <span class="tag">{{ post.tag }}</span>
+  <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+  <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
+  <a href="{{ post.url | relative_url }}">Read the story →</a>
+</article>

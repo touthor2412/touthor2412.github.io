@@ -1,0 +1,27 @@
+# Timeline steps, oldest first.
+# Fields: when, title, text, story (optional URL), future (optional, true for steps not reached yet)
+- when: "[Year]"
+  title: "Growing up in Laos"
+  text: "[Where you grew up, your family, what you loved as a child.]"
+
+- when: "[Year]"
+  title: "[University or first big step]"
+  text: "[What you studied before Japan and what made you want to go further.]"
+
+- when: "[Year]"
+  title: "Moving to Niigata, Japan"
+  text: "Starting a master’s degree at Niigata University, in a new country and a new language."
+  story: /stories/2026/leaving-laos-for-japan/
+
+- when: "2026"
+  title: "Internships in Japan"
+  text: "Working with Japanese companies on real projects, and learning how teams work here."
+
+- when: "November 2026"
+  title: "Teaching English"
+  text: "Starting as a part-time English tutor at the university."
+
+- when: "Next"
+  title: "What comes after"
+  text: "[Finishing the master’s, and what you hope for next.]"
+  future: true

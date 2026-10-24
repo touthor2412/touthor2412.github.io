@@ -1,0 +1,25 @@
+title: Touthor
+description: Stories and memories from Laos, Niigata and everywhere in between.
+author: Touthor Hangsengsua
+url: "https://touthor2412.github.io"
+baseurl: ""
+lang: en
+timezone: Asia/Tokyo
+markdown: kramdown
+permalink: /stories/:year/:title/
+excerpt_separator: "<!--more-->"
+
+# Public contact links for the footer. Leave email empty until there is a public address.
+contact:
+  email: ""
+  github: "https://github.com/touthor2412"
+  linkedin: ""
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+defaults:
+  - scope: { path: "", type: "posts" }
+    values: { layout: post }
+exclude: [PLAN.md, README.md, Gemfile, Gemfile.lock, vendor, tools]

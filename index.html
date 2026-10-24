@@ -1,0 +1,7 @@
+---
+layout: default
+---
+<h1>Hi, I'm Touthor.</h1>
+{% for post in site.posts limit: 3 %}
+  {% include story-card.html post=post %}
+{% endfor %}

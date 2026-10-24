@@ -2,8 +2,46 @@
 layout: default
 title: Stories
 permalink: /stories/
+description: Moments I want to remember, written down so I don't forget them.
 ---
-<h1>Stories</h1>
-{% for post in site.posts %}
-  {% include story-card.html post=post %}
-{% endfor %}
+<div class="page-main">
+  <div class="wrap">
+    <h1 class="page-title">Stories</h1>
+    <p class="lead">Moments I want to remember, written down so I don't forget them, and so you can know me a little better.</p>
+
+    <div class="filters" role="group" aria-label="Filter stories by topic" data-filters hidden>
+      <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+      {% for tag in site.data.tags %}
+      <button type="button" class="filter-btn" data-filter="{{ tag | slugify }}" aria-pressed="false">{{ tag }}</button>
+      {% endfor %}
+    </div>
+
+    <ul class="story-list">
+      {% for post in site.posts %}
+      <li data-story-tag="{{ post.tag | slugify }}">
+        <article class="story-row">
+          {% if post.cover %}
+          <div class="story-row-photo">
+            <img src="{{ post.cover | relative_url }}" alt="{{ post.cover_alt | escape }}" loading="lazy">
+          </div>
+          {% else %}
+          <div class="story-row-photo placeholder" aria-hidden="true">{% include koi-logo.svg stroke=3 eye=3 %}</div>
+          {% endif %}
+          <div class="story-row-text">
+            <div class="meta">
+              {% if post.tag %}<span class="tag">{{ post.tag }}</span>{% endif %}
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %Y' }}</time>
+              <span>{% include reading-time.html content=post.content %}</span>
+            </div>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <p>{{ post.excerpt | strip_html | strip | truncate: 160 }}</p>
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <p class="list-note" id="filter-status" role="status" aria-live="polite"></p>
+  </div>
+</div>
+<script src="{{ '/assets/js/stories-filter.js' | relative_url }}" defer></script>

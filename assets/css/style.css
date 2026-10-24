@@ -694,7 +694,7 @@ figure { margin: 0; }
   padding: 96px 0;
   text-align: center;
 }
-.not-found .koi { width: 220px; margin: 0 auto 32px; }
+.not-found .koi { display: block; width: 220px; margin: 0 auto 32px; }
 .not-found p { margin-bottom: 24px; font-family: var(--font-serif); font-size: 20px; color: var(--muted); }
 
 /* ---------- Footer ---------- */

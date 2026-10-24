@@ -4,6 +4,11 @@ title: Page not found
 permalink: /404.html
 sitemap: false
 ---
-<h1>This page swam away</h1>
-{% include koi-logo.svg %}
-<p><a href="{{ '/' | relative_url }}">Back to the home page</a></p>
+<div class="wrap">
+  <div class="not-found">
+    {% include koi-logo.svg stroke=3 eye=3 %}
+    <h1 class="page-title">This page swam away</h1>
+    <p>The page you were looking for isn't here. Maybe it moved, or the link has a typo.</p>
+    <a class="btn btn--primary" href="{{ '/' | relative_url }}">Back to the home page</a>
+  </div>
+</div>

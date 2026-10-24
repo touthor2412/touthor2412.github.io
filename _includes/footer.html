@@ -1,4 +1,20 @@
+{% assign contact = site.contact %}
 <footer id="contact" class="site-footer">
-  <p>{{ site.description }}</p>
-  <p>© {{ 'now' | date: '%Y' }} {{ site.author }} · Hosted on GitHub Pages</p>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">Touthor</p>
+        <p class="footer-tagline">{{ site.description }}</p>
+      </div>
+      <div class="footer-links">
+        <h2>Say hello</h2>
+        <ul>
+          {% if contact.email and contact.email != '' %}<li><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>{% endif %}
+          {% if contact.github and contact.github != '' %}<li><a href="{{ contact.github }}">GitHub</a></li>{% endif %}
+          {% if contact.linkedin and contact.linkedin != '' %}<li><a href="{{ contact.linkedin }}">LinkedIn</a></li>{% endif %}
+        </ul>
+      </div>
+    </div>
+    <p class="footer-small">© {{ 'now' | date: '%Y' }} {{ site.author }} · Hosted on GitHub Pages</p>
+  </div>
 </footer>

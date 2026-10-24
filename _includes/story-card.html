@@ -1,7 +1,7 @@
-{% assign post = include.post %}
+{%- assign post = include.post -%}
 <article class="story-card" data-tag="{{ post.tag | slugify }}">
-  <span class="tag">{{ post.tag }}</span>
+  {% if post.tag %}<span class="tag">{{ post.tag }}</span>{% endif %}
   <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-  <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
-  <a href="{{ post.url | relative_url }}">Read the story →</a>
+  <p>{{ post.excerpt | strip_html | strip | truncate: 160 }}</p>
+  <a class="link-arrow" href="{{ post.url | relative_url }}">Read the story<span class="visually-hidden">: {{ post.title }}</span>&nbsp;→</a>
 </article>

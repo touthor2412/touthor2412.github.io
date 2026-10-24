@@ -77,6 +77,7 @@ a:hover { color: var(--accent-hover); }
   font-weight: 700;
 }
 .skip-link:focus { top: 12px; color: #FFFFFF; }
+main:focus { outline: none; }
 
 .visually-hidden {
   position: absolute;
@@ -218,7 +219,7 @@ a:hover { color: var(--accent-hover); }
   font-weight: 500;
   border-bottom: 2px solid transparent;
 }
-.site-nav a[aria-current="page"] { border-bottom-color: var(--accent); }
+.site-nav a[aria-current] { border-bottom-color: var(--accent); }
 
 .koi { color: var(--accent); }
 

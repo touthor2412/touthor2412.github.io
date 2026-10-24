@@ -1,10 +1,13 @@
+{% assign url = page.url | default: '/' %}
 <header class="site-header">
-  <a class="logo" href="{{ '/' | relative_url }}">{% include koi-logo.svg %} Touthor</a>
-  <nav aria-label="Main">
-    <a href="{{ '/' | relative_url }}">Home</a>
-    <a href="{{ '/stories/' | relative_url }}">Stories</a>
-    <a href="{{ '/journey/' | relative_url }}">Journey</a>
-    <a href="{{ '/research/' | relative_url }}">Research</a>
-    <a href="{{ '/#contact' | relative_url }}">Contact</a>
-  </nav>
+  <div class="wrap">
+    <a class="logo" href="{{ '/' | relative_url }}">{% include koi-logo.svg %}Touthor</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="{{ '/' | relative_url }}"{% if url == '/' or url == '/index.html' %} aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/stories/' | relative_url }}"{% if url == '/stories/' %} aria-current="page"{% elsif page.layout == 'post' %} aria-current="true"{% endif %}>Stories</a>
+      <a href="{{ '/journey/' | relative_url }}"{% if url == '/journey/' %} aria-current="page"{% endif %}>Journey</a>
+      <a href="{{ '/research/' | relative_url }}"{% if url == '/research/' %} aria-current="page"{% endif %}>Research</a>
+      <a href="{{ '/#contact' | relative_url }}">Contact</a>
+    </nav>
+  </div>
 </header>

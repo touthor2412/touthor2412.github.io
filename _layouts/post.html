@@ -1,11 +1,60 @@
 ---
 layout: default
 ---
-<article class="story">
-  <p><a href="{{ '/stories/' | relative_url }}">← All stories</a></p>
-  <h1>{{ page.title }}</h1>
-  {% if page.subtitle %}<p class="story-subtitle">{{ page.subtitle }}</p>{% endif %}
+{%- assign portrait = site.static_files | where: "path", "/assets/images/profile/portrait.jpg" | first -%}
+<article>
+  <header class="story-header">
+    <a class="link-arrow" href="{{ '/stories/' | relative_url }}">← All stories</a>
+    <div class="meta">
+      {% if page.tag %}<span class="tag">{{ page.tag }}</span>{% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %Y' }}</time>
+      <span>{% include reading-time.html content=content %}</span>
+    </div>
+    <h1 class="story-title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="story-subtitle">{{ page.subtitle }}</p>{% endif %}
+  </header>
+
+  {% if page.cover %}
+  <figure class="story-cover">
+    <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | escape }}">
+    {% if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
+
   <div class="story-body">
     {{ content }}
   </div>
+
+  <aside class="author-box" aria-label="About the author">
+    <div class="author-box-inner">
+      {% if portrait %}
+      <img class="author-photo" src="{{ portrait.path | relative_url }}" alt="" width="72" height="72">
+      {% else %}
+      <span class="author-photo" aria-hidden="true"></span>
+      {% endif %}
+      <div class="author-box-text">
+        <p class="author-name">Written by Touthor</p>
+        <p class="author-bio">Graduate student in Niigata, originally from Laos. Writing down the moments worth keeping.</p>
+      </div>
+    </div>
+  </aside>
 </article>
+
+{% if page.previous or page.next %}
+<nav class="story-nav" aria-label="More stories">
+  <div class="story-nav-inner">
+    {% if page.previous %}
+    <a class="older" href="{{ page.previous.url | relative_url }}">
+      <span class="story-nav-label">← Older story</span>
+      <span class="story-nav-title">{{ page.previous.title }}</span>
+    </a>
+    {% endif %}
+    {% if page.next %}
+    <a class="newer" href="{{ page.next.url | relative_url }}">
+      <span class="story-nav-label">Newer story →</span>
+      <span class="story-nav-title">{{ page.next.title }}</span>
+    </a>
+    {% endif %}
+  </div>
+</nav>
+{% endif %}

@@ -321,6 +321,9 @@ main:focus { outline: none; }
 .story-card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
 .story-card .tag { align-self: flex-start; }
 .story-card h3 { font-size: 26px; line-height: 1.2; }
+/* Title links: taller tap area (44px) without moving the layout */
+.story-card h3 a,
+.story-row h2 a { display: inline-block; padding: 7px 0; margin: -7px 0; }
 .story-card p {
   font-family: var(--font-serif);
   font-size: 18px;

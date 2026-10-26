@@ -16,6 +16,7 @@ You only edit text files. There is nothing to install unless you want to preview
 | Research page text | `research.md` |
 | Contact links in the footer | `contact:` in `_config.yml` |
 | Photos | `assets/images/` (clean them first, see below) |
+| Slideshow photos on Home | `_data/home_slides.yml` and `assets/images/home/` |
 | Your portrait | `assets/images/profile/portrait.jpg` |
 
 Text in `[square brackets]` is a placeholder. Replace it with your own words.
@@ -110,8 +111,24 @@ Only use photos you took yourself, or that you have permission to use.
 iPhone `.heic` photos: export them as JPG first.
 
 **Your portrait:** clean it with `--out assets/images/profile`, then rename the result
-to `portrait.jpg`. A tall photo works best (4:5, for example 840×1050). It then
-shows on Home and in the author box under each story.
+to `portrait.jpg`. It shows in the author box under each story.
+
+**Slideshow on Home:** the photos at the top of Home are listed in `_data/home_slides.yml`.
+
+1. Clean the photos into the home folder:
+
+   ```
+   python tools/clean_photos.py "C:/Users/me/Pictures/IMG_2041.jpg" --out assets/images/home
+   ```
+
+2. Rename each cleaned file to the name in `_data/home_slides.yml` (`slide-1.jpg`,
+   `slide-2.jpg`, `slide-3.jpg`), or change `file:` to the new name.
+3. Write `alt` (what the photo shows) and `caption` (a short line shown on the photo)
+   for each one. To change the order, move the blocks. To add a photo, add a block.
+
+Tall photos work best (4:5, for example 840×1050). Others are cropped to fit.
+A photo listed in the file but missing from `assets/images/home/` is skipped, and with
+no photos at all Home shows the blue placeholder.
 
 ## Publish your changes
 

@@ -282,14 +282,110 @@ main:focus { outline: none; }
   line-height: 1.6;
   color: var(--muted);
 }
+.hero-media { flex: 1 1 320px; max-width: 420px; }
 .hero-photo {
-  flex: 1 1 320px;
-  max-width: 420px;
+  position: relative;
   aspect-ratio: 4 / 5;
   border-radius: 28px;
   overflow: hidden;
 }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Slideshow: the new photo fades in over the old one, which then hides. */
+.slideshow [hidden] { display: none; }
+.slideshow .hero-photo { background: var(--water-2); touch-action: pan-y pinch-zoom; }
+.slides { height: 100%; }
+.slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0s .6s, visibility 0s .6s;
+}
+.slide.is-active {
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .6s ease;
+}
+.slide figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 48px 24px 20px;
+  background: linear-gradient(to top, rgba(23, 34, 43, .8) 60%, rgba(23, 34, 43, 0));
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.slideshow-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: var(--ink);
+  box-shadow: 0 2px 10px rgba(23, 34, 43, .25);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+.slideshow-arrow:hover { color: var(--accent-hover); }
+.slideshow-arrow svg { width: 22px; height: 22px; }
+.slideshow-arrow--prev { left: 12px; }
+.slideshow-arrow--next { right: 12px; }
+
+.slideshow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+.slideshow-dots { display: flex; margin-left: -16px; }
+.slideshow-dot {
+  display: inline-flex;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0 0 0 16px;   /* the active dot grows to the right, keeping its left edge */
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.slideshow-dot::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--control-line);
+  border-radius: var(--radius-pill);
+  transition: width .3s, background-color .3s, border-color .3s;
+}
+.slideshow-dot:hover::before { border-color: var(--ink); }
+.slideshow-dot[aria-current]::before {
+  width: 28px;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.slideshow-toggle {
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.slideshow-toggle svg { width: 16px; height: 16px; }
+.slideshow-toggle[data-playing="true"] .icon-play,
+.slideshow-toggle[data-playing="false"] .icon-pause { display: none; }
 
 .section-head {
   display: flex;

@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-{%- assign portrait = site.static_files | where: "path", "/assets/images/profile/portrait.jpg" | first -%}
 <section class="hero">
   <div class="wrap">
     <div class="hero-text">
@@ -13,16 +12,7 @@ layout: default
         <a class="btn" href="{{ '/journey/' | relative_url }}">See my journey</a>
       </div>
     </div>
-    {% if portrait %}
-    <div class="hero-photo">
-      <img src="{{ portrait.path | relative_url }}" alt="Portrait of Touthor" width="840" height="1050">
-    </div>
-    {% else %}
-    <div class="hero-photo placeholder" role="img" aria-label="Placeholder for a portrait photo">
-      {% include koi-logo.svg stroke=3 eye=3 %}
-      <span>[Your photo goes here]</span>
-    </div>
-    {% endif %}
+    {% include home-slideshow.html %}
   </div>
 </section>
 

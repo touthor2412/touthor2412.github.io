@@ -163,3 +163,16 @@ This repo is public: anyone can read every file in it.
 - Don't add photos of other people without their permission.
 - Don't add research data, model files or code from the research repos.
 - Always clean photos with `tools/clean_photos.py` before committing them.
+
+## Keeping it safe
+
+- Update Pillow every few months: `python -m pip install --upgrade Pillow`.
+  Newer versions fix security bugs in how photos are read.
+- Only install from the official places: python.org and PyPI for Python, rubyinstaller.org
+  and rubygems.org for Ruby. Copy package names exactly. Fake packages often use
+  look-alike names.
+- The site only loads its own files and Google Fonts. This rule is the
+  `Content-Security-Policy` line in `_includes/head.html`. If you ever add an outside
+  script, video or widget, add its web address to that line too, or the browser will block it.
+- On GitHub, keep **two-factor authentication** on for your account and keep
+  **Enforce HTTPS** ticked under the repo's Settings → Pages.

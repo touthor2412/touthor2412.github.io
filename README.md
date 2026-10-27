@@ -16,8 +16,9 @@ You only edit text files. There is nothing to install unless you want to preview
 | Research page text | `research.md` |
 | Contact links in the footer | `contact:` in `_config.yml` |
 | Photos | `assets/images/` (clean them first, see below) |
-| Slideshow photos on Home | `_data/home_slides.yml` and `assets/images/home/` |
-| Your portrait | `assets/images/profile/portrait.jpg` |
+| Your profile photo (Home and under each story) | `assets/images/profile/portrait.jpg` |
+| Banner photos on Stories | `_data/stories_banner.yml` and `assets/images/stories-banner/` |
+| Colors and fonts | `assets/css/site.css` (light and dark values at the top) |
 
 Text in `[square brackets]` is a placeholder. Replace it with your own words.
 
@@ -110,25 +111,29 @@ Only use photos you took yourself, or that you have permission to use.
 
 iPhone `.heic` photos: export them as JPG first.
 
-**Your portrait:** clean it with `--out assets/images/profile`, then rename the result
-to `portrait.jpg`. It shows in the author box under each story.
+**Your profile photo:** clean it with `--out assets/images/profile`, then rename the result
+to `portrait.jpg`. It shows at the top of Home and in the author box under each story.
+Tall photos work best (4:5, for example 880×1100). Others are cropped to fit.
 
-**Slideshow on Home:** the photos at the top of Home are listed in `_data/home_slides.yml`.
+**Banner photos on Stories:** the photos behind the title at the top of the Stories page
+are listed in `_data/stories_banner.yml`. A new one fades in every 5 seconds.
 
-1. Clean the photos into the home folder:
+1. Clean the photos into the banner folder:
 
    ```
-   python tools/clean_photos.py "C:/Users/me/Pictures/IMG_2041.jpg" --out assets/images/home
+   python tools/clean_photos.py "C:/Users/me/Pictures/IMG_2041.jpg" --out assets/images/stories-banner
    ```
 
-2. Rename each cleaned file to the name in `_data/home_slides.yml` (`slide-1.jpg`,
-   `slide-2.jpg`, `slide-3.jpg`), or change `file:` to the new name.
-3. Write `alt` (what the photo shows) and `caption` (a short line shown on the photo)
-   for each one. To change the order, move the blocks. To add a photo, add a block.
+2. Rename each cleaned file to the name in `_data/stories_banner.yml` (`banner-1.jpg`,
+   `banner-2.jpg`, `banner-3.jpg`), or change `file:` to the new name.
 
-Tall photos work best (4:5, for example 840×1050). Others are cropped to fit.
-A photo listed in the file but missing from `assets/images/home/` is skipped, and with
-no photos at all Home shows the blue placeholder.
+Wide photos work best (for example 1600×900). A dark layer keeps the white title readable,
+so any photo works. The photos are only decoration, so they don't need alt text.
+A photo listed in the file but missing from the folder is skipped, and with no photos
+the banner is plain purple.
+
+**Light and dark mode:** the sun/moon button in the header switches the whole site and
+remembers the choice. On a first visit the site follows the visitor's system setting.
 
 ## Publish your changes
 

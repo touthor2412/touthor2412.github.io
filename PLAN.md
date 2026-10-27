@@ -66,7 +66,7 @@ touthor2412.github.io/
 ├── _posts/
 │   └── 2026-10-24-leaving-laos-for-japan.md   # sample story with placeholders
 └── assets/
-    ├── css/style.css
+    ├── css/site.css
     ├── js/stories-filter.js
     └── images/               # posts/, research/, profile/
 ```
@@ -105,7 +105,7 @@ gem "webrick"   # needed for `jekyll serve` on Ruby 3+
 
 ---
 
-## Phase 2: Design system in `assets/css/style.css`
+## Phase 2: Design system in `assets/css/site.css`
 
 The site has two themes: a **lavender light mode** and a **purple dark mode**. Put every color in CSS custom properties. Light values go on `:root`, and dark values go on `:root[data-theme="dark"]`. Never hard-code a color anywhere else.
 

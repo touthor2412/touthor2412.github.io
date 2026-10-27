@@ -1,18 +1,31 @@
 ---
 layout: default
+portrait_alt: "Touthor smiling in a selfie, wearing white headphones under a clear blue sky"
 ---
+{%- assign portrait = site.static_files | where: "path", "/assets/images/profile/portrait.jpg" | first -%}
 <section class="hero">
   <div class="wrap">
     <div class="hero-text">
-      <p class="eyebrow">Niigata, Japan · originally from Laos</p>
-      <h1 class="hero-title">Hi, I'm Touthor.</h1>
+      <p class="pill-label">{% include sparkle.svg %}Niigata, Japan · originally from Laos</p>
+      <h1 class="display-title display-title--hero"><span class="display-kicker">Hi, I'm</span> <span class="display-word">Touthor</span></h1>
       <p class="hero-intro">This is my place for stories, memories and the things I'm learning, from Laos to Niigata and everywhere in between.</p>
       <div class="btn-row">
-        <a class="btn btn--primary" href="{{ '/stories/' | relative_url }}">Read my stories</a>
+        <a class="btn btn--dark" href="{{ '/stories/' | relative_url }}">Read my stories<span class="btn-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
         <a class="btn" href="{{ '/journey/' | relative_url }}">See my journey</a>
       </div>
     </div>
-    {% include home-slideshow.html %}
+    <div class="hero-media">
+      <div class="hero-ring" aria-hidden="true"></div>
+      {% include sparkle.svg class="hero-sparkle" %}
+      {%- if portrait %}
+      <img class="hero-photo" src="{{ portrait.path | relative_url }}" alt="{{ page.portrait_alt | default: site.author | escape }}" width="440" height="550">
+      {%- else %}
+      <div class="hero-photo placeholder" role="img" aria-label="Placeholder for your profile photo">
+        {% include koi-logo.svg stroke=3 eye=3 %}
+        <span>[Profile image]</span>
+      </div>
+      {%- endif %}
+    </div>
   </div>
 </section>
 
@@ -30,9 +43,9 @@ layout: default
   </div>
 </section>
 
-<section class="section section--water about" aria-labelledby="about-title">
+<section class="section section--soft about" aria-labelledby="about-title">
   <div class="wrap">
-    <h2 class="section-title" id="about-title">A little about me</h2>
+    <h2 class="section-title" id="about-title">A little <span class="accent">about me</span></h2>
     <div class="about-text">
       <p>I'm a graduate student at Niigata University in Japan, and I'm originally from Laos.</p>
       <p>My research uses AI to study how to judge the quality of Kohaku koi. Outside the lab, [add two or three sentences about what you love: food, music, places, people].</p>
@@ -48,7 +61,7 @@ layout: default
       <div class="science-card-text">
         <h2>A little science, too</h2>
         <p>Kohaku koi are prized in Japan for a clean white body with a bold red pattern. I'm teaching a computer to judge that quality. Here is the idea in plain words.</p>
-        <a class="btn" href="{{ '/research/' | relative_url }}">About my research</a>
+        <a class="btn btn--primary" href="{{ '/research/' | relative_url }}">About my research</a>
       </div>
     </div>
   </div>

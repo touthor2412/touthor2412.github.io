@@ -1,0 +1,32 @@
+{%- comment -%}
+  Hero banner for the Stories page, with background photos from _data/stories_banner.yml.
+  Photos not yet in assets/images/stories-banner/ are skipped. With none, the banner is plain purple.
+  The photos are decorative, so screen readers only read the title.
+{%- endcomment -%}
+{%- assign banner_list = "" -%}
+{%- for photo in site.data.stories_banner -%}
+  {%- assign photo_path = "/assets/images/stories-banner/" | append: photo.file -%}
+  {%- assign photo_file = site.static_files | where: "path", photo_path | first -%}
+  {%- if photo_file -%}{%- assign banner_list = banner_list | append: photo_path | append: "," -%}{%- endif -%}
+{%- endfor -%}
+{%- assign banner_photos = banner_list | split: "," -%}
+<section class="banner" aria-labelledby="stories-title"{% if banner_photos.size > 1 %} data-banner{% endif %}>
+  {%- for path in banner_photos %}
+  <img class="banner-photo{% if forloop.first %} is-active{% endif %}" src="{{ path | relative_url }}" alt="" aria-hidden="true"{% unless forloop.first %} loading="lazy"{% endunless %}>
+  {%- endfor %}
+  <div class="banner-shade" aria-hidden="true"></div>
+  {% include sparkle.svg class="banner-sparkle" %}
+  <div class="banner-text">
+    <p class="display-kicker">Moments worth keeping</p>
+    <h1 class="display-title display-word" id="stories-title">Stories</h1>
+    <p class="banner-intro">Written down so I don't forget them, and so you can know me a little better.</p>
+  </div>
+  {%- if banner_photos.size > 1 %}
+  <div class="banner-bars" aria-hidden="true">
+    {%- for path in banner_photos %}<span class="banner-bar{% if forloop.first %} is-active{% endif %}"></span>{% endfor -%}
+  </div>
+  {%- endif %}
+</section>
+{%- if banner_photos.size > 1 %}
+<script src="{{ '/assets/js/banner.js' | relative_url }}" defer></script>
+{%- endif %}

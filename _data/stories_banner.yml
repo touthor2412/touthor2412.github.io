@@ -1,0 +1,9 @@
+# Background photos for the banner at the top of the Stories page, in the order they show.
+#   file: a photo in assets/images/stories-banner/ (clean it first, see README)
+# Wide photos work best (for example 1600x900). The middle of each photo stays in view.
+# The photos are only decoration, so they don't need alt text.
+# A photo that isn't in assets/images/stories-banner/ yet is skipped.
+
+- file: banner-1.jpg
+- file: banner-2.jpg
+- file: banner-3.jpg

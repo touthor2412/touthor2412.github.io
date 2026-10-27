@@ -5,7 +5,8 @@ permalink: /research/
 description: Teaching a computer to judge the quality of Kohaku koi.
 wrap: wrap--research
 eyebrow: "Master's research · Niigata University"
-heading: "Teaching a computer to judge koi"
+kicker: "Teaching a computer to"
+big: "Judge koi"
 lead: "Kohaku koi are white fish with red patterns, and in Japan a beautiful one can win prizes. Judging them takes years of experience. I'm testing whether an AI model can learn what a high-quality Kohaku looks like."
 body_class: research
 ---
@@ -48,11 +49,11 @@ body_class: research
 <div class="research-block panel">
   <div>
     <h2>Why it matters</h2>
-    <p class="serif">Koi are a big part of Niigata's culture and its local industry. A tool like this could one day help breeders and buyers by giving a second opinion that is consistent and easy to explain.</p>
+    <p>Koi are a big part of Niigata's culture and its local industry. A tool like this could one day help breeders and buyers by giving a second opinion that is consistent and easy to explain.</p>
   </div>
   <div>
     <h2>For the curious</h2>
-    <p class="serif">The model is a Denoising Diffusion Probabilistic Model (DDPM). The gap between the photo and the rebuilt fish, called the reconstruction error, is the quality signal.</p>
+    <p>The model is a Denoising Diffusion Probabilistic Model (DDPM). The gap between the photo and the rebuilt fish, called the reconstruction error, is the quality signal.</p>
   </div>
 </div>
 

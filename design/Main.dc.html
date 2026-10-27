@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Touthor: Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&amp;family=Outfit:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}a:hover{color:var(--accent-hover)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+</helmet>
+<div style="{{rootStyle}}">
+
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding:14px 40px;border-bottom:1px solid var(--line)">
+<a href="Main.dc.html" style="display:inline-flex;align-items:center;gap:12px;min-height:44px;font-family:'Outfit',system-ui,sans-serif;font-size:22px;font-weight:800;letter-spacing:0.06em">
+<svg width="50" height="21" viewBox="0 0 220 90" aria-hidden="true"><path d="M10 45 C40 8 120 6 170 38 L214 14 C206 34 206 56 214 76 L170 52 C120 84 40 82 10 45 Z" style="fill:#FFFFFF;stroke:var(--ink);stroke-width:5"></path><path d="M52 22 C76 12 100 16 112 30 C100 40 70 42 50 36 Z" style="fill:var(--koi)"></path><path d="M104 52 C126 44 150 48 160 56 C146 66 118 68 104 60 Z" style="fill:var(--koi)"></path><circle cx="34" cy="40" r="4" style="fill:var(--ink)"></circle></svg>
+TOUTHOR</a>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+<nav aria-label="Main" style="display:flex;flex-wrap:wrap;gap:2px">
+<a href="Main.dc.html" aria-current="page" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:16px;font-weight:700;background:var(--soft);color:var(--accent)">Home</a>
+<a href="Stories.dc.html" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:16px;font-weight:500">Stories</a>
+<a href="Journey.dc.html" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:16px;font-weight:500">Journey</a>
+<a href="Research.dc.html" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:16px;font-weight:500">Research</a>
+<a href="#contact" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:16px;font-weight:500">Contact</a>
+</nav>
+<button type="button" onClick="{{toggleTheme}}" aria-label="Dark mode" aria-pressed="{{darkPressed}}" style="width:44px;height:44px;flex:0 0 auto;border-radius:50%;border:2px solid var(--line-strong);background:var(--surface);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0">
+<sc-if value="{{showMoon}}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></sc-if>
+<sc-if value="{{showSun}}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></sc-if>
+</button>
+</div>
+</header>
+
+<main id="main">
+
+<section style="padding:56px 40px 64px;overflow:hidden">
+<div style="max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:48px 56px">
+<div style="flex:1 1 460px;min-width:0">
+<p style="display:inline-flex;align-items:center;gap:8px;margin:0 0 24px;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line-strong);background:var(--surface);font-size:15px;font-weight:500;color:var(--muted)"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="fill:var(--accent)"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>Niigata, Japan · originally from Laos</p>
+<h1 style="margin:0 0 24px;font-family:'Outfit',system-ui,sans-serif;font-weight:800;line-height:0.95;letter-spacing:-0.03em">
+<span style="display:block;font-size:clamp(34px,4.6vw,54px);font-weight:700;letter-spacing:-0.02em;margin-bottom:6px">Hi, I'm</span>
+<span style="display:block;font-size:clamp(64px,10.5vw,132px);color:var(--accent)">TOUTHOR</span>
+</h1>
+<p style="margin:0 0 36px;max-width:30em;font-size:20px;line-height:1.65;color:var(--muted)">This is my place for stories, memories and the things I'm learning, from Laos to Niigata and everywhere in between.</p>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px">
+<a href="Stories.dc.html" style="display:inline-flex;align-items:center;gap:14px;min-height:52px;padding:0 8px 0 26px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:17px;font-weight:700">Read my stories<span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--on-accent)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<a href="Journey.dc.html" style="display:inline-flex;align-items:center;min-height:52px;padding:0 26px;border-radius:999px;border:2px solid var(--accent);color:var(--accent);font-size:17px;font-weight:700">See my journey</a>
+</div>
+</div>
+
+<div style="flex:1 1 340px;max-width:440px;min-width:0;position:relative;padding:20px 0">
+<div aria-hidden="true" style="position:absolute;left:-14%;right:-14%;top:12%;bottom:22%;border:2px solid var(--ring);border-radius:50%;transform:rotate(-14deg);pointer-events:none"></div>
+<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true" style="position:absolute;top:0;right:-6px;z-index:2;fill:var(--accent)"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+<div style="position:relative;z-index:1">
+<div role="img" aria-label="Placeholder for your profile photo" style="position:relative;width:100%;aspect-ratio:4/5;border-radius:32px;overflow:hidden;background:var(--ph);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px">
+<svg width="62%" viewBox="0 0 220 90" aria-hidden="true"><path d="M10 45 C40 8 120 6 170 38 L214 14 C206 34 206 56 214 76 L170 52 C120 84 40 82 10 45 Z" style="fill:#FFFFFF;stroke:var(--ink);stroke-width:3"></path><path d="M52 22 C76 12 100 16 112 30 C100 40 70 42 50 36 Z" style="fill:var(--koi)"></path><path d="M104 52 C126 44 150 48 160 56 C146 66 118 68 104 60 Z" style="fill:var(--koi)"></path><circle cx="34" cy="40" r="3" style="fill:var(--ink)"></circle></svg>
+<span style="font-size:17px;font-weight:500;color:var(--ink)">[Profile image]</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding:0 40px 88px">
+<div style="max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:36px 56px;padding:48px;border-radius:36px;background:var(--panel);color:var(--panel-text)">
+<div style="flex:1 1 380px;min-width:0">
+<p style="display:flex;align-items:center;gap:8px;margin:0 0 14px;font-size:15px;font-weight:500;color:var(--panel-muted)"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style="fill:var(--panel-text)"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>What you'll find here</p>
+<h2 style="margin:0 0 14px;font-family:'Outfit',system-ui,sans-serif;font-size:clamp(32px,4vw,44px);line-height:1.08;font-weight:700;letter-spacing:-0.02em">Where memories meet the things I learn</h2>
+<p style="margin:0;max-width:30em;font-size:18px;line-height:1.6;color:var(--panel-muted)">Life stories, the steps that brought me here, and a little science, all in one place.</p>
+</div>
+<div style="flex:1 1 380px;min-width:0;display:flex;flex-wrap:wrap;gap:16px">
+<a href="Stories.dc.html" style="flex:1 1 110px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px 8px;border-radius:20px;color:var(--panel-text);text-align:center">
+<span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.14);border:1.5px solid rgba(255,255,255,0.4)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"></path><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"></path></svg></span>
+<span style="font-size:17px;font-weight:700">Stories</span>
+<span style="font-size:14px;color:var(--panel-muted)">Life, food, places</span>
+</a>
+<a href="Journey.dc.html" style="flex:1 1 110px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px 8px;border-radius:20px;color:var(--panel-text);text-align:center">
+<span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.14);border:1.5px solid rgba(255,255,255,0.4)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></span>
+<span style="font-size:17px;font-weight:700">Journey</span>
+<span style="font-size:14px;color:var(--panel-muted)">Laos to Niigata</span>
+</a>
+<a href="Research.dc.html" style="flex:1 1 110px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px;padding:16px 8px;border-radius:20px;color:var(--panel-text);text-align:center">
+<span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.14);border:1.5px solid rgba(255,255,255,0.4)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"></path></svg></span>
+<span style="font-size:17px;font-weight:700">Research</span>
+<span style="font-size:14px;color:var(--panel-muted)">Koi and AI</span>
+</a>
+</div>
+</div>
+</section>
+
+<section style="padding:0 40px 88px">
+<div style="max-width:1160px;margin:0 auto">
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;margin-bottom:32px">
+<h2 style="margin:0;font-family:'Outfit',system-ui,sans-serif;font-size:40px;line-height:1.1;font-weight:700;letter-spacing:-0.02em">Latest stories</h2>
+<a href="Stories.dc.html" style="display:inline-flex;align-items:center;min-height:44px;font-size:17px;font-weight:700;color:var(--accent)">All stories →</a>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:24px">
+<sc-for list="{{latest}}" as="c" hint-placeholder-count="3">
+<article style="flex:1 1 300px;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:14px;display:flex;flex-direction:column;box-shadow:var(--shadow)">
+<div role="img" aria-label="Placeholder for a story photo" style="{{c.photo}}">[photo]</div>
+<div style="padding:20px 12px 10px;display:flex;flex-direction:column;gap:12px;flex:1 1 auto">
+<span style="align-self:flex-start;padding:5px 12px;border-radius:999px;background:var(--soft);color:var(--accent);font-size:14px;font-weight:700">{{c.tag}}</span>
+<h3 style="margin:0;font-family:'Outfit',system-ui,sans-serif;font-size:25px;line-height:1.2;font-weight:700"><a href="Story.dc.html">{{c.title}}</a></h3>
+<p style="margin:0;font-size:17px;line-height:1.6;color:var(--muted)">[Two sentences from the story appear here as a preview.]</p>
+<a href="Story.dc.html" style="margin-top:auto;display:inline-flex;align-items:center;min-height:44px;font-size:16px;font-weight:700;color:var(--accent)">Read the story →</a>
+</div>
+</article>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding:80px 40px;background:var(--soft)">
+<div style="max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px 64px">
+<h2 style="flex:1 1 280px;min-width:0;margin:0;font-family:'Outfit',system-ui,sans-serif;font-size:40px;line-height:1.1;font-weight:700;letter-spacing:-0.02em">A little <span style="color:var(--accent)">about me</span></h2>
+<div style="flex:2 1 460px;min-width:0">
+<p style="margin:0 0 20px;font-size:19px;line-height:1.7;max-width:36em">I'm a graduate student at Niigata University in Japan, and I'm originally from Laos.</p>
+<p style="margin:0 0 28px;font-size:19px;line-height:1.7;max-width:36em">My research uses AI to study how to judge the quality of Kohaku koi. Outside the lab, [add two or three sentences about what you love: food, music, places, people].</p>
+<a href="Journey.dc.html" style="display:inline-flex;align-items:center;min-height:44px;font-size:17px;font-weight:700;color:var(--accent)">Follow my journey →</a>
+</div>
+</div>
+</section>
+
+<section style="padding:88px 40px 96px">
+<div style="max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:32px 48px;background:var(--surface);border:1px solid var(--line);border-radius:36px;padding:48px;box-shadow:var(--shadow)">
+<svg width="200" viewBox="0 0 220 90" aria-hidden="true" style="flex:0 0 auto;max-width:100%"><path d="M10 45 C40 8 120 6 170 38 L214 14 C206 34 206 56 214 76 L170 52 C120 84 40 82 10 45 Z" style="fill:#FFFFFF;stroke:var(--ink);stroke-width:3"></path><path d="M52 22 C76 12 100 16 112 30 C100 40 70 42 50 36 Z" style="fill:var(--koi)"></path><path d="M104 52 C126 44 150 48 160 56 C146 66 118 68 104 60 Z" style="fill:var(--koi)"></path><circle cx="34" cy="40" r="3" style="fill:var(--ink)"></circle></svg>
+<div style="flex:1 1 360px;min-width:0">
+<h2 style="margin:0 0 12px;font-family:'Outfit',system-ui,sans-serif;font-size:34px;line-height:1.12;font-weight:700;letter-spacing:-0.02em">A little science, too</h2>
+<p style="margin:0 0 22px;font-size:18px;line-height:1.65;color:var(--muted);max-width:34em">Kohaku koi are prized in Japan for a clean white body with a bold red pattern. I'm teaching a computer to judge that quality. Here is the idea in plain words.</p>
+<a href="Research.dc.html" style="display:inline-flex;align-items:center;min-height:50px;padding:0 24px;border-radius:999px;background:var(--accent);color:var(--on-accent);font-size:17px;font-weight:700">About my research</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer id="contact" style="background:var(--footer);color:var(--footer-text);padding:56px 40px 32px;border-radius:36px 36px 0 0">
+<div style="max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px 64px;justify-content:space-between">
+<div style="flex:1 1 320px;min-width:0">
+<p style="margin:0 0 12px;font-family:'Outfit',system-ui,sans-serif;font-size:26px;font-weight:800;letter-spacing:0.06em">TOUTHOR</p>
+<p style="margin:0;max-width:26em;font-size:17px;line-height:1.6;color:var(--footer-muted)">Stories and memories from Laos, Niigata and everywhere in between.</p>
+</div>
+<div style="flex:1 1 260px;min-width:0;display:flex;flex-direction:column">
+<h2 style="margin:0 0 8px;font-family:'Outfit',system-ui,sans-serif;font-size:19px;font-weight:700">Say hello</h2>
+<a href="#contact" style="display:inline-flex;align-items:center;min-height:44px;font-size:17px;color:var(--footer-text);text-decoration:underline">[your public email]</a>
+<a href="#contact" style="display:inline-flex;align-items:center;min-height:44px;font-size:17px;color:var(--footer-text);text-decoration:underline">[GitHub link]</a>
+<a href="#contact" style="display:inline-flex;align-items:center;min-height:44px;font-size:17px;color:var(--footer-text);text-decoration:underline">[LinkedIn or other link]</a>
+</div>
+</div>
+<p style="max-width:1160px;margin:40px auto 0;font-size:15px;color:var(--footer-muted)">© 2026 Touthor Hangsengsua · Hosted on GitHub Pages</p>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"$preview":{"width":1280,"height":2800}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { mode: null };
+}
+theme() {
+const THEMES = {
+light: { bg: '#F6F3FC', surface: '#FFFFFF', ink: '#1D1533', muted: '#5B5374', line: '#E3DCF4', 'line-strong': '#CFC4EE', soft: '#ECE6FB', ph: '#DCD1F6', ph2: '#E6DDF8', ph3: '#D4CBF2', accent: '#6A4BD6', 'on-accent': '#FFFFFF', 'accent-hover': '#5236B8', panel: '#6A4BD6', 'panel-text': '#FFFFFF', 'panel-muted': '#E7E0FF', koi: '#C8432C', footer: '#1D1533', 'footer-text': '#F4F0FF', 'footer-muted': '#B9B0D6', ring: '#C9BCF2', shadow: '0 14px 36px rgba(60,40,140,0.10)' },
+dark: { bg: '#130E24', surface: '#1E1738', ink: '#F4F0FF', muted: '#B8ADDC', line: '#352B5E', 'line-strong': '#4A3D80', soft: '#1B1432', ph: '#2C2354', ph2: '#33285F', ph3: '#271F4C', accent: '#B19CFF', 'on-accent': '#130E24', 'accent-hover': '#CDBEFF', panel: '#3B2A82', 'panel-text': '#FFFFFF', 'panel-muted': '#D9CFFF', koi: '#FF8068', footer: '#0C0918', 'footer-text': '#F4F0FF', 'footer-muted': '#B8ADDC', ring: '#4A3D80', shadow: '0 14px 36px rgba(0,0,0,0.35)' }
+};
+const mode = this.state.mode || this.props.theme || 'light';
+const t = THEMES[mode] || THEMES.light;
+const vars = Object.keys(t).map((k) => '--' + k + ':' + t[k]).join(';');
+return {
+rootStyle: vars + ";background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;transition:background-color 0.3s ease,color 0.3s ease",
+darkPressed: mode === 'dark' ? 'true' : 'false',
+showSun: mode === 'dark',
+showMoon: mode !== 'dark',
+toggleTheme: () => this.setState({ mode: mode === 'dark' ? 'light' : 'dark' })
+};
+}
+renderVals() {
+const photo = 'aspect-ratio:16/10;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink);background:';
+const latest = [
+{ tag: 'Moving to Japan', title: 'Leaving Laos for Japan', photo: photo + 'var(--ph)' },
+{ tag: 'Student life', title: 'My first winter in Niigata', photo: photo + 'var(--ph2)' },
+{ tag: 'Food and places', title: 'Food I miss, food I found', photo: photo + 'var(--ph3)' }
+];
+return Object.assign(this.theme(), { latest });
+}
+}
+</script>
+</body>
+</html>

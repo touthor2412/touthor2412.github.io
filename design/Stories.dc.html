@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Touthor: Stories</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}a:hover{color:var(--accent-hover)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+</style>
+</helmet>
+<div style="{{rootStyle}}">
+
+<header style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding:14px 40px;border-bottom:1px solid var(--line)">
+<a href="Main.dc.html" style="display:inline-flex;align-items:center;gap:12px;min-height:44px;font-family:'Outfit',system-ui,sans-serif;font-size:22px;font-weight:800;letter-spacing:0.06em">
+<svg width="50" height="21" viewBox="0 0 220 90" aria-hidden="true"><path d="M10 45 C40 8 120 6 170 38 L214 14 C206 34 206 56 214 76 L170 52 C120 84 40 82 10 45 Z" style="fill:#FFFFFF;stroke:var(--ink);stroke-width:5"/><path d="M52 22 C76 12 100 16 112 30 C100 40 70 42 50 36 Z" style="fill:var(--koi)"/><path d="M104 52 C126 44 150 48 160 56 C146 66 118 68 104 60 Z" style="fill:var(--koi)"/><circle cx="34" cy="40" r="4" style="fill:var(--ink)"/></svg>
+TOUTHOR</a>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+<nav aria-label="Main" style="display:flex;flex-wrap:wrap;gap:2px">
+<a href="Main.dc.html" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:16px;font-weight:500">Home</a>
+<a href="Stories.dc.html" aria-current="page" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:16px;font-weight:700;background:var(--soft);color:var(--accent)">Stories</a>
+<a href="Journey.dc.html" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:16px;font-weight:500">Journey</a>
+<a href="Research.dc.html" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:16px;font-weight:500">Research</a>
+<a href="Main.dc.html#contact" style="display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:16px;font-weight:500">Contact</a>
+</nav>
+<button type="button" onClick="{{toggleTheme}}" aria-label="Dark mode" aria-pressed="{{darkPressed}}" style="width:44px;height:44px;flex:0 0 auto;border-radius:50%;border:2px solid var(--line-strong);background:var(--surface);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0">
+<sc-if value="{{showMoon}}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></sc-if>
+<sc-if value="{{showSun}}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></sc-if>
+</button>
+</div>
+</header>
+
+<main style="padding:40px 40px 96px">
+<div style="max-width:1160px;margin:0 auto">
+
+<section aria-labelledby="stories-title" style="position:relative;overflow:hidden;border-radius:36px;min-height:400px;display:flex;align-items:flex-end;margin-bottom:40px;background:#2A1F55;box-shadow:var(--shadow)">
+<sc-for list="{{bgs}}" as="b" hint-placeholder-count="3">
+<div aria-hidden="true" style="{{b.style}}"><span style="position:absolute;top:24px;right:28px;padding:6px 14px;border-radius:999px;background:rgba(19,14,36,0.5);font-size:14px;color:#FFFFFF">{{b.label}}</span></div>
+</sc-for>
+<div aria-hidden="true" style="position:absolute;inset:0;background:rgba(19,14,36,0.40)"></div>
+<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" style="position:absolute;top:28px;left:32px;z-index:1;fill:#D9CFFF"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"/></svg>
+<div style="position:relative;z-index:1;padding:48px;max-width:760px">
+<p style="margin:0 0 4px;font-family:'Outfit',system-ui,sans-serif;font-size:clamp(24px,3.2vw,38px);font-weight:700;letter-spacing:-0.02em;color:#FFFFFF">Moments worth keeping</p>
+<h1 id="stories-title" style="margin:0 0 16px;font-family:'Outfit',system-ui,sans-serif;font-size:clamp(60px,9vw,112px);line-height:0.95;font-weight:800;letter-spacing:-0.03em;text-transform:uppercase;color:#D9CFFF">Stories</h1>
+<p style="margin:0;max-width:30em;font-size:19px;line-height:1.6;color:#F1ECFF">Written down so I don't forget them, and so you can know me a little better.</p>
+</div>
+<div aria-hidden="true" style="position:absolute;right:32px;bottom:32px;z-index:1;display:flex;gap:6px">
+<sc-for list="{{bgs}}" as="m" hint-placeholder-count="3">
+<span style="{{m.mark}}"></span>
+</sc-for>
+</div>
+</section>
+
+<div role="group" aria-label="Filter stories by topic" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:48px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="6">
+<button type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="{{f.style}}">{{f.label}}</button>
+</sc-for>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:20px">
+<sc-for list="{{shown}}" as="s" hint-placeholder-count="5">
+<article style="display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:16px;box-shadow:var(--shadow)">
+<div role="img" aria-label="Placeholder for a story photo" style="flex:0 0 240px;max-width:100%;aspect-ratio:4/3;border-radius:18px;background:var(--ph);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink)">[photo]</div>
+<div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:10px;padding:8px 8px 8px 0">
+<div style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:15px;color:var(--muted)">
+<span style="padding:5px 12px;border-radius:999px;background:var(--soft);color:var(--accent);font-weight:700">{{s.tag}}</span>
+<span>{{s.date}}</span>
+<span>{{s.read}}</span>
+</div>
+<h2 style="margin:0;font-family:'Outfit',system-ui,sans-serif;font-size:28px;line-height:1.2;font-weight:700"><a href="Story.dc.html">{{s.title}}</a></h2>
+<p style="margin:0;font-size:17px;line-height:1.6;color:var(--muted);max-width:38em">[Two sentences from the story appear here as a preview.]</p>
+</div>
+</article>
+</sc-for>
+</div>
+
+<p style="margin:48px 0 0;font-size:16px;color:var(--muted)">Each story is one Markdown file. New ones appear here at the top, newest first.</p>
+</div>
+</main>
+
+<footer style="background:var(--footer);color:var(--footer-text);padding:40px;border-radius:36px 36px 0 0">
+<p style="max-width:1160px;margin:0 auto;font-size:15px;color:var(--footer-muted)">© 2026 Touthor Hangsengsua · Hosted on GitHub Pages</p>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dark"],"default":"light"},"$preview":{"width":1280,"height":2100}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { mode: null, tag: 'All', bg: 0, still: false };
+}
+componentDidMount() {
+var reduce = false;
+try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+if (reduce) { this.setState({ still: true }); return; }
+this.timer = setInterval(() => this.setState({ bg: (this.state.bg + 1) % 3 }), 5000);
+}
+componentWillUnmount() {
+clearInterval(this.timer);
+}
+theme() {
+const THEMES = {
+light: { bg: '#F6F3FC', surface: '#FFFFFF', ink: '#1D1533', muted: '#5B5374', line: '#E3DCF4', 'line-strong': '#CFC4EE', soft: '#ECE6FB', ph: '#DCD1F6', ph2: '#E6DDF8', ph3: '#D4CBF2', accent: '#6A4BD6', 'on-accent': '#FFFFFF', 'accent-hover': '#5236B8', panel: '#6A4BD6', 'panel-text': '#FFFFFF', 'panel-muted': '#E7E0FF', koi: '#C8432C', footer: '#1D1533', 'footer-text': '#F4F0FF', 'footer-muted': '#B9B0D6', ring: '#C9BCF2', shadow: '0 14px 36px rgba(60,40,140,0.10)' },
+dark: { bg: '#130E24', surface: '#1E1738', ink: '#F4F0FF', muted: '#B8ADDC', line: '#352B5E', 'line-strong': '#4A3D80', soft: '#1B1432', ph: '#2C2354', ph2: '#33285F', ph3: '#271F4C', accent: '#B19CFF', 'on-accent': '#130E24', 'accent-hover': '#CDBEFF', panel: '#3B2A82', 'panel-text': '#FFFFFF', 'panel-muted': '#D9CFFF', koi: '#FF8068', footer: '#0C0918', 'footer-text': '#F4F0FF', 'footer-muted': '#B8ADDC', ring: '#4A3D80', shadow: '0 14px 36px rgba(0,0,0,0.35)' }
+};
+const mode = this.state.mode || this.props.theme || 'light';
+const t = THEMES[mode] || THEMES.light;
+const vars = Object.keys(t).map((k) => '--' + k + ':' + t[k]).join(';');
+return {
+rootStyle: vars + ";background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;transition:background-color 0.3s ease,color 0.3s ease",
+darkPressed: mode === 'dark' ? 'true' : 'false',
+showSun: mode === 'dark',
+showMoon: mode !== 'dark',
+toggleTheme: () => this.setState({ mode: mode === 'dark' ? 'light' : 'dark' })
+};
+}
+renderVals() {
+const cur = this.state.bg;
+const still = this.state.still;
+const bgs = ['#5B44B8', '#3E2E86', '#7A5AD9'].map((color, n) => {
+const on = n === cur;
+return {
+label: '[Background photo ' + (n + 1) + ']',
+style: 'position:absolute;inset:0;background:' + color + ';opacity:' + (on ? '1' : '0') + ';transform:scale(' + (on && !still ? '1.06' : '1') + ');transition:' + (still ? 'none' : 'opacity 1.2s ease,transform 6s ease-out'),
+mark: 'display:block;height:6px;border-radius:999px;transition:width 0.4s ease;width:' + (on ? '28px' : '10px') + ';background:' + (on ? '#FFFFFF' : 'rgba(255,255,255,0.45)')
+};
+});
+const stories = [
+{ title: 'Leaving Laos for Japan', tag: 'Moving to Japan', date: '[Month Year]', read: '6 min read' },
+{ title: 'My first winter in Niigata', tag: 'Student life', date: '[Month Year]', read: '5 min read' },
+{ title: 'Food I miss, food I found', tag: 'Food and places', date: '[Month Year]', read: '4 min read' },
+{ title: 'Five days at an internship in Japan', tag: 'Work', date: '[Month Year]', read: '7 min read' },
+{ title: 'Why I came to love koi', tag: 'Research', date: '[Month Year]', read: '5 min read' }
+];
+const labels = ['All', 'Moving to Japan', 'Student life', 'Food and places', 'Work', 'Research'];
+const filters = labels.map((label) => {
+const on = this.state.tag === label;
+return {
+label,
+pressed: on ? 'true' : 'false',
+pick: () => this.setState({ tag: label }),
+style: 'min-height:44px;padding:0 20px;border-radius:999px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;' +
+(on ? 'background:var(--accent);color:var(--on-accent);border:2px solid var(--accent)' : 'background:var(--surface);color:var(--ink);border:2px solid var(--line-strong)')
+};
+});
+const shown = this.state.tag === 'All' ? stories : stories.filter((s) => s.tag === this.state.tag);
+return Object.assign(this.theme(), { bgs, filters, shown });
+}
+}
+</script>
+</body>
+</html>

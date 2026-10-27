@@ -22,4 +22,4 @@ plugins:
 defaults:
   - scope: { path: "", type: "posts" }
     values: { layout: post }
-exclude: [PLAN.md, README.md, Gemfile, Gemfile.lock, vendor, tools]
+exclude: [PLAN.md, README.md, Gemfile, Gemfile.lock, vendor, tools, design]

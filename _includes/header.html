@@ -7,7 +7,7 @@
         <a href="{{ '/' | relative_url }}"{% if url == '/' or url == '/index.html' %} aria-current="page"{% endif %}>Home</a>
         <a href="{{ '/stories/' | relative_url }}"{% if url == '/stories/' %} aria-current="page"{% elsif page.layout == 'post' %} aria-current="true"{% endif %}>Stories</a>
         <a href="{{ '/journey/' | relative_url }}"{% if url == '/journey/' %} aria-current="page"{% endif %}>Journey</a>
-        <a href="{{ '/research/' | relative_url }}"{% if url == '/research/' %} aria-current="page"{% endif %}>Research</a>
+        <a href="{{ '/interests/' | relative_url }}"{% if url == '/interests/' %} aria-current="page"{% endif %}>Interests</a>
         <a href="{{ '/#contact' | relative_url }}">Contact</a>
       </nav>
       <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" data-theme-toggle>

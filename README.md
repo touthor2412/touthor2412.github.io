@@ -13,7 +13,7 @@ You only edit text files. There is nothing to install unless you want to preview
 | Story topics (the filter buttons) | `_data/tags.yml` |
 | Journey timeline | `_data/journey.yml` |
 | Home page text | `index.html` |
-| Research page text | `research.md` |
+| Interests page text and photos | `interests.md` and `assets/images/interests/` |
 | Contact links in the footer | `contact:` in `_config.yml` |
 | Photos | `assets/images/` (clean them first, see below) |
 | Your profile photo (Home and under each story) | `assets/images/profile/portrait.jpg` |
@@ -132,6 +132,22 @@ so any photo works. The photos are only decoration, so they don't need alt text.
 A photo listed in the file but missing from the folder is skipped, and with no photos
 the banner is plain purple.
 
+**Photos on Interests:** each interest in `interests.md` has three photo spots. Clean the
+photos with `--out assets/images/interests`, then replace a placeholder line like
+
+```html
+<figure><div class="placeholder" role="img" aria-label="Placeholder for a photo">[Photo]</div></figure>
+```
+
+with
+
+```html
+<figure><img src="/assets/images/interests/running-river.jpg" alt="The river path where I run in the morning"></figure>
+```
+
+Write a short `alt` for each photo. Wide photos work best (3:2). Others are cropped to fit.
+You can also add a caption under the photo with `<figcaption>Your caption</figcaption>` before `</figure>`.
+
 **Light and dark mode:** the sun/moon button in the header switches the whole site and
 remembers the choice. On a first visit the site follows the visitor's system setting.
 
@@ -167,6 +183,7 @@ This repo is public: anyone can read every file in it.
 - Only put an email in `_config.yml` if it is one you are happy to share publicly.
 - Don't add photos of other people without their permission.
 - Don't add research data, model files or code from the research repos.
+  The site doesn't talk about the research at all.
 - Always clean photos with `tools/clean_photos.py` before committing them.
 
 ## Keeping it safe
